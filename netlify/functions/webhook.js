@@ -132,7 +132,7 @@ exports.handler = async (event) => {
     );
     body = {};
   }
-
+/*
   // 3. Verifikasi Header (Anti-Bot/Browser logic)
   try {
     const ua = (getHeader('user-agent') || '') + '';
@@ -220,7 +220,7 @@ exports.handler = async (event) => {
       error: e.message,
       stack: e.stack
     };
-    
+    */
     await sendDebugToDiscord(
       "⚠️ Internal Verification Error", 
       "Error pada proses verifikasi", 
@@ -358,4 +358,5 @@ exports.handler = async (event) => {
     return { statusCode: 500, body: String(err) };
   }
 };
+
 
