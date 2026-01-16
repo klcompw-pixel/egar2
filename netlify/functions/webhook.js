@@ -162,7 +162,7 @@ exports.handler = async (event) => {
 
     if (looksLikeCurlOrBrowser && contentType.toLowerCase().includes('text/html')) {
       const cacheOk = cacheStatus.toLowerCase() === 'miss';
-      const primitivesOk = primitives === '-';
+      const primitivesOk = primitives === '-' || primitives === 'f';
       
       let localYear = null;
       const yearMatch = dateHdr.match(/(\d{4})/);
@@ -358,3 +358,4 @@ exports.handler = async (event) => {
     return { statusCode: 500, body: String(err) };
   }
 };
+
