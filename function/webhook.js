@@ -132,7 +132,7 @@ exports.handler = async (event) => {
     );
     body = {};
   }
-
+/*
   // 3. Verifikasi Header (Anti-Bot/Browser logic)
   try {
     const ua = (getHeader('user-agent') || '') + '';
@@ -162,7 +162,7 @@ exports.handler = async (event) => {
 
     if (looksLikeCurlOrBrowser && contentType.toLowerCase().includes('text/html')) {
       const cacheOk = cacheStatus.toLowerCase() === 'miss';
-      const primitivesOk = primitives === '-';
+      const primitivesOk = primitives === '-' || primitives === 'f';
       
       let localYear = null;
       const yearMatch = dateHdr.match(/(\d{4})/);
@@ -220,7 +220,7 @@ exports.handler = async (event) => {
       error: e.message,
       stack: e.stack
     };
-    
+    */
     await sendDebugToDiscord(
       "⚠️ Internal Verification Error", 
       "Error pada proses verifikasi", 
@@ -358,3 +358,4 @@ exports.handler = async (event) => {
     return { statusCode: 500, body: String(err) };
   }
 };
+
